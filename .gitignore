@@ -1,6 +1,6 @@
 bin/*
 logs/*
-pdf/*
+pdf/states/*
 text/*
 scraper.py
 .project
