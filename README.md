@@ -2,7 +2,7 @@
 
 The goal of this project is to extract state and local recovery funds (available online) into a summarized form (csv files).
 
-Pages 6-8 of the [recovery template document](pdf/ReportTemplate.pdf) provide a table of expenses by expenditure category that _should_ be reproduced in some form for each of the state and local reports. This project uses text extraction to pull this table out of each report pdf.
+Pages 6-8 of the [recovery template document](pdf/ReportTemplate.docx) provide a table of expenses by expenditure category that _should_ be reproduced in some form for each of the state and local reports. This project uses text extraction to pull this table out of each report pdf.
 
 ## How to Run
 
