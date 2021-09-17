@@ -5,3 +5,4 @@ text/*
 scraper.py
 .project
 .classpath
+__pycache__*
