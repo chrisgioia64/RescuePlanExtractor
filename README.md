@@ -6,10 +6,10 @@ Pages 6-8 of the [recovery template document](pdf/template/ReportTemplate.pdf) p
 
 ## How to Run
 
-To download all pdfs of states from [here](https://www.nasbo.org/mainsite/resources/covid-19-relief-funds-guidance-and-resources/state-recovery-plans) into the `pdf` directory, run (might need to install some python dependencies):
+To run the program,
 
-    python dataloader.py
+    python Runner.py
 
-Check the console or the `logs` to see if there are any `MISSING` pdfs, and add those manually from [here](https://www.nasbo.org/mainsite/resources/covid-19-relief-funds-guidance-and-resources/state-recovery-plans).
+Check the console or the `logs` directory (most recent log file) to check for any errors (couldn't download pdf, couldn't convert). You may be able to add some of those files manually (see [State Reports](https://www.nasbo.org/mainsite/resources/covid-19-relief-funds-guidance-and-resources/state-recovery-plans)) into the folder `pdf/states`, and re-run the script.
 
 _Note:_ This project will work only on Windows.

@@ -39,7 +39,7 @@ class Loader:
             if Utils.contains_file(self.pdf_dir, pdf_file):
                 self.logger.debug("Added               %s", pdf_file)
             else:
-                self.logger.info("Missing             %s", pdf_file)
+                self.logger.info("%-30s (Could not download pdf)", link.text)
                 return
         if Utils.contains_file(self.text_dir, text_file):
             pass

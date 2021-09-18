@@ -17,4 +17,4 @@ def convert_to_pdf(pdf_file, text_file, logger):
             ['lib\pdftotext.exe', '-q', '-layout', pdf_file, text_file])
         logger.debug("Successfully converted  " + pdf_file)
     except subprocess.CalledProcessError as err:
-        logger.info("Could not convert   " + pdf_file)
+        logger.info("%-30s (Could not convert pdf to text)", pdf_file)
