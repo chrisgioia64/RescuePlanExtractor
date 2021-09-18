@@ -6,3 +6,4 @@ scraper.py
 .project
 .classpath
 __pycache__*
+csv/*
