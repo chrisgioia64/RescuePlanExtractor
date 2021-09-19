@@ -18,11 +18,18 @@ Pages 6-8 of the [recovery template document](pdf/template/ReportTemplate.pdf) p
 
 **Step 3:** Download the pdf reports.
 
+There are two sources of reports.
+
+1. [State Reports](https://www.nasbo.org/mainsite/resources/covid-19-relief-funds-guidance-and-resources/state-recovery-plans)
+2. [Local Reports](https://drive.google.com/drive/folders/1ixRAsqCEpsau9l2-NzSkUSzVWmZOUr7s?usp=sharing)
+
+You need to download all files from the _Local Reports_ link and place it in `pdf/local`. The _State Reports_ will be automatically downloaded from the link above.
+
 From within the project directory, run:
 
     python Runner.py -d
 
-Check the console or the `logs` directory (most recent log file) to check for any errors (couldn't download pdf, couldn't convert). You may be able to add some of those files manually (see [State Reports](https://www.nasbo.org/mainsite/resources/covid-19-relief-funds-guidance-and-resources/state-recovery-plans)) into the folder `pdf/states`, and re-run the script.
+Check the console or the `logs` directory (most recent log file) to check for any errors (couldn't download pdf, couldn't convert). You may be able to add some of those files manually, and re-run the script.
 
 **Step 4:** Extract tables from reports
 
