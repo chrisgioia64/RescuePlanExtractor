@@ -99,7 +99,6 @@ public class TestRunner {
     public static void createCSVFile(String filename,
             Template template, List<EntityReport> entityReports) throws IOException {
 //        FileWriter out = new FileWriter(new File(filename));
-        System.out.println(filename);
         BufferedWriter out = new BufferedWriter(new FileWriter(filename));
         CSVPrinter printer = new CSVPrinter(out, CSVFormat.DEFAULT.withHeader(
                 "Entity", "Code", 

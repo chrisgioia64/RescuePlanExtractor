@@ -145,8 +145,8 @@ public class EntityReportExtractor extends Extractor<EntityReport> {
                         }
                         
                         if (!found) {
-                            System.err.println("Invalid category \"" + groupCode + "\"");
-                            System.out.println(line);
+//                            System.err.println("Invalid category \"" + groupCode + "\"");
+//                            System.out.println(line);
                         } else {
                             EntityLineItem report = new EntityLineItem(groupCode, text.toString(), 
                                     number1, number2);
@@ -154,8 +154,8 @@ public class EntityReportExtractor extends Extractor<EntityReport> {
                         }
                         
                     } else {
-                        System.err.println("Invalid group code: " + groupCode);
-                        System.out.println(line);
+//                        System.err.println("Invalid group code: " + groupCode);
+//                        System.out.println(line);
                     }
                 }
             }
