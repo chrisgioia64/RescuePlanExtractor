@@ -18,3 +18,12 @@ def convert_to_pdf(pdf_file, text_file, logger):
         logger.debug("Successfully converted  " + pdf_file)
     except subprocess.CalledProcessError as err:
         logger.info("%-30s (Could not convert pdf to text)", pdf_file)
+
+
+def create_csv(csv_filename, logger):
+    try:
+        subprocess.check_call(
+            ['java', '-jar', 'extract.jar', csv_filename])
+        logger.debug("Successfully created  %s", csv_filename)
+    except subprocess.CalledProcessError as err:
+        logger.info("Could not create %s", csv_filename)
