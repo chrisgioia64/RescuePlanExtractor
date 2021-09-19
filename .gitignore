@@ -7,3 +7,4 @@ scraper.py
 .classpath
 __pycache__*
 csv/*
+pythondir/*

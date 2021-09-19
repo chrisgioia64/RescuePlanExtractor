@@ -6,16 +6,26 @@ Pages 6-8 of the [recovery template document](pdf/template/ReportTemplate.pdf) p
 
 ## How to Run
 
-Step 1: Download the pdf reports (and convert to text)
+**Step 1:** First, clone this repository onto your local machine.
+
+**Step 2:** This program uses Java and Python. Satisfy the following prerequisites:
+
+(A) Install Java 8+ on your computer. Verify installation by running `java -version` on the command prompt.
+
+(B) Install all required python dependencies. From within the project directory, execute the following command.
+
+    pip install -r requirements.txt
+
+**Step 3:** Download the pdf reports.
 
     python Runner.py -d
 
 Check the console or the `logs` directory (most recent log file) to check for any errors (couldn't download pdf, couldn't convert). You may be able to add some of those files manually (see [State Reports](https://www.nasbo.org/mainsite/resources/covid-19-relief-funds-guidance-and-resources/state-recovery-plans)) into the folder `pdf/states`, and re-run the script.
 
-Step 2: Extract tables from reports
+**Step 4:** Extract tables from reports
 
     python Runner.py -o output.csv
 
-Using the downloaded text data from step 1, this will extract the table of expenses and place them into a csv file specified by the `o` argument. Look in `csv\output.csv` for the generated csv file.
+Using the downloaded reports from step 1, this will extract the table of expenses and place them into a csv file specified by the `o` argument. Look in `csv\output.csv` for the generated csv file.
 
 _Note:_ This project will work only on Windows.
