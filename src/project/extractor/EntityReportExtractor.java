@@ -153,10 +153,6 @@ public class EntityReportExtractor extends Extractor<EntityReport> {
                             lineItems.add(report);
                         }
                         
-//                        System.out.println();
-//                        System.out.println(line);
-//                        System.out.println(groupCode + " " + number1 + " " + number2);
-//                        System.out.println();
                     } else {
                         System.err.println("Invalid group code: " + groupCode);
                         System.out.println(line);
