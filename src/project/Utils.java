@@ -22,4 +22,11 @@ public class Utils {
         return (c >= '0') && (c <= '9');
     }
     
+    public static String formatDollar(Double amount) {
+        if (amount == null) {
+            return "";
+        }
+        return String.format("$%,.2f", amount);
+    }
+    
 }

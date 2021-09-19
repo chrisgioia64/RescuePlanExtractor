@@ -37,5 +37,5 @@ if args.d:
     templateLoader.execute()
 
 if args.o:
-    logger.info("---  Writing out to a csv file: %s", args.o)
+    logger.info("---  Writing out to csv/%s", args.o)
     Utils.create_csv(args.o, logger)

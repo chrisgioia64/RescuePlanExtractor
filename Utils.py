@@ -24,6 +24,6 @@ def create_csv(csv_filename, logger):
     try:
         subprocess.check_call(
             ['java', '-jar', 'extract.jar', csv_filename])
-        logger.debug("Successfully created  %s", csv_filename)
+        logger.info("Successfully created csv file")
     except subprocess.CalledProcessError as err:
         logger.info("Could not create %s", csv_filename)

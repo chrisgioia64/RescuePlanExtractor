@@ -115,8 +115,8 @@ public class TestRunner {
                 printer.printRecord(
                         entityReport.getEntityName(),
                         item.getNumber(),
-                        item.getCumulativeExpenditures(),
-                        item.getSinceLastRecoveryPlan(),
+                        Utils.formatDollar(item.getCumulativeExpenditures()),
+                        Utils.formatDollar(item.getSinceLastRecoveryPlan()),
                         item.getText(),
                         template.get(item.getNumber()).getText());
             }
