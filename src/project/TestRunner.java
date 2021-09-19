@@ -3,6 +3,7 @@ package project;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -22,6 +23,22 @@ import project.model.EntityReport;
 import project.model.Template;
 
 public class TestRunner {
+    
+    private static List<EntityReport> processFolder(File folder, Template template) throws IOException {
+        List<EntityReport> entityReports = new LinkedList<>();
+        for (File file : folder.listFiles()) {
+            if (file.isFile()) {
+                BufferedReader r = new BufferedReader(new FileReader(file));
+                String state = Utils.getPrefix(file.getName());
+                EntityReportExtractor extractor = new EntityReportExtractor(
+                        r, state, template);
+                extractor.readLines();
+                entityReports.add(extractor.createExtractedItem());
+                r.close();
+            }
+        }
+        return entityReports;
+    }
 
     public static void main(String[] args) {
         if (args.length == 0) {
@@ -33,20 +50,11 @@ public class TestRunner {
             templateExtractor.readLines();
             Template template = templateExtractor.createExtractedItem();
             
-
-            File folder = new File(ConfigConstants.TEXT_DIRECTORY + "\\" + ConfigConstants.STATES_DIR);
             List<EntityReport> entityReports = new LinkedList<>();
-            for (File file : folder.listFiles()) {
-                if (file.isFile()) {
-                    BufferedReader r = new BufferedReader(new FileReader(file));
-                    String state = Utils.getPrefix(file.getName());
-                    EntityReportExtractor extractor = new EntityReportExtractor(
-                            r, state, template);
-                    extractor.readLines();
-                    entityReports.add(extractor.createExtractedItem());
-                    r.close();
-                }
-            }
+            File statesFolder = new File(ConfigConstants.TEXT_DIRECTORY + "\\" + ConfigConstants.STATES_DIR);
+            entityReports.addAll(processFolder(statesFolder, template));
+            File localFolder = new File(ConfigConstants.TEXT_DIRECTORY + "\\" + ConfigConstants.LOCAL_DIR);
+            entityReports.addAll(processFolder(localFolder, template));
 
             // Write output to csv
             try {
@@ -111,7 +119,6 @@ public class TestRunner {
 
         for (EntityReport entityReport : entityReports) {
             for (EntityLineItem item : entityReport.getLineItems()) {
-
                 printer.printRecord(
                         entityReport.getEntityName(),
                         item.getNumber(),

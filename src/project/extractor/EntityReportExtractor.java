@@ -103,7 +103,7 @@ public class EntityReportExtractor extends Extractor<EntityReport> {
                         } else if (phase.equals(ParsePhase.GAP)) {
                             if (Utils.isDigit(c)) {
                                 num2.append(c);
-                                phase = ParsePhase.GAP;
+                                phase = ParsePhase.SECOND_NUMBER;
                             }
                         } else if (phase.equals(ParsePhase.SECOND_NUMBER)) {
                             if (c == ' ') {

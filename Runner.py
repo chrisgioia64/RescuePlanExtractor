@@ -35,6 +35,9 @@ if args.d:
     stateLoader.execute()
     templateLoader = Loader.TemplateLoader(Constants.TEMPLATES_DIR, logger)
     templateLoader.execute()
+    localLoader = Loader.LocalLoader(Constants.LOCALS_DIR, logger)
+    localLoader.execute()
+
 
 if args.o:
     logger.info("---  Writing out to csv/%s", args.o)

@@ -48,6 +48,22 @@ class Loader:
                                  self.text_dir + text_file, self.logger)
 
 
+class LocalLoader(Loader):
+
+    def execute(self):
+        pdf_files = os.listdir(self.pdf_dir)
+        for pdf_file in pdf_files:
+            items = pdf_file.split(".")
+            if len(items) == 2:
+                base_file = items[0]
+                text_file = base_file + ".txt"
+                print("Converting pdf to text: " + base_file)
+                Utils.convert_to_pdf(self.pdf_dir + pdf_file,
+                                     self.text_dir + text_file, self.logger)
+            else:
+                self.logger.info("Error: " + pdf_file)
+
+
 class StateLoader(Loader):
 
     def execute(self):

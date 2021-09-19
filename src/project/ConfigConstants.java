@@ -11,6 +11,7 @@ public class ConfigConstants {
     // Files
     public static final String TEMPLATE_TEXT = TEXT_DIRECTORY + "/template/ReportTemplate.txt";
     public static final String STATES_DIR = "states/";
+    public static final String LOCAL_DIR = "local/";
     
 
 }
