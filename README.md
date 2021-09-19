@@ -26,6 +26,6 @@ Check the console or the `logs` directory (most recent log file) to check for an
 
     python Runner.py -o output.csv
 
-Using the downloaded reports from step 1, this will extract the table of expenses and place them into a csv file specified by the `o` argument. Look in `csv\output.csv` for the generated csv file.
+Using the downloaded reports from step 3, this will extract the table of expenses and place them into a csv file specified by the `o` argument. Look in `csv\output.csv` for the generated csv file.
 
 _Note:_ This project will work only on Windows.
