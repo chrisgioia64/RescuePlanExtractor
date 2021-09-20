@@ -121,7 +121,7 @@ public class TestRunner {
             for (EntityLineItem item : entityReport.getLineItems()) {
                 printer.printRecord(
                         entityReport.getEntityName(),
-                        item.getNumber(),
+                        "#" + item.getNumber() + " ",
                         Utils.formatDollar(item.getCumulativeExpenditures()),
                         Utils.formatDollar(item.getSinceLastRecoveryPlan()),
                         item.getText(),
