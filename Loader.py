@@ -21,8 +21,9 @@ class Loader:
         pass
 
     def download_file(self, link):
-        pdf_file = link.text + ".pdf"
-        text_file = link.text + ".txt"
+        entityName = link.text.strip()
+        pdf_file = entityName + ".pdf"
+        text_file = entityName + ".txt"
         if Utils.contains_file(self.pdf_dir, pdf_file):
             # self.logger.info("      %s -- ALREADY EXISTS", pdf_file)
             pass
@@ -39,7 +40,7 @@ class Loader:
             if Utils.contains_file(self.pdf_dir, pdf_file):
                 self.logger.debug("Added               %s", pdf_file)
             else:
-                self.logger.info("%-30s (Could not download pdf)", link.text)
+                self.logger.info("%-30s (Could not download pdf)", entityName)
                 return
         if Utils.contains_file(self.text_dir, text_file):
             pass
